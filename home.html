@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fashion E-Commerce - Home</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+/>
+
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    .logo .part1 {
+      color: #ff6f91;
+    }
+
+    .logo .part2 {
+      color: #4a4a4a;
+    }
+
+   .logo::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(90deg, #ff6f91, #f59e6c);
+      transition: width 0.3s ease;
+      border-radius: 3px;
+    }
+    
+    .logo:hover::after {
+      width: 100%;
+    }
+
+
+    nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999; 
+}
+
+    .nav-link {
+      position: relative;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(90deg, #ff6f91, #f59e6c);
+      transition: width 0.3s ease;
+      border-radius: 3px;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: #ff6f91;
+    }
+
+
+    .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block; 
+  text-align: center;
+  cursor: pointer;
+}
+
+
+h2.section-title {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+
+
+.section-title .part1 {
+  color: black; 
+}
+
+.section-title .part2 {
+  color: #ff6f91; 
+}
+     
+
+.section-title:hover .part1 {
+  color: #ff6f91;
+}
+
+.section-title:hover .part2 {
+  color: black;
+}
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6f91, #f1b693);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.section-title:hover::after {
+  width: 100%;
+}
+
+.btn-pink {
+  background-color: #ff6f91; 
+  color: white;
+  border: none;
+}
+
+.btn-pink:hover {
+  background-color: #f59fb3;
+  color: white;
+}
+
+.container{
+  text-align: center;
+}
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  
+  cursor: pointer;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff6f91, #f1b693);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.section-title:hover::after {
+  width: 100%;
+}
+
+
+.text-part1 {
+  color:black;
+}
+
+.text-part2 {
+  color: #ff6f91; 
+}
+
+
+.section-title:hover .text-part1 {
+  color: #ff6f91;
+}
+
+.section-title:hover .text-part2 {
+  color: black;
+}
+
+
+.swiper-slide img {
+  width: 100;
+  height: 450px; 
+  object-fit: contain;
+}  
+    
+.btn-primary {
+   background-color:#fc98af ;
+   border:none ;
+    
+}
+ .btn-primary:hover {
+   background-color: #fdaad8;
+   box-shadow: 0 4px 15px rgba(245, 158, 108, 0.6);
+     }
+
+    
+
+   
+    .old-price {
+      text-decoration: line-through;
+      color: #888;
+      margin-right: 8px;
+    }
+    .new-price {
+      font-weight: 700;
+      color: #28a745;
+      margin-right: 8px;
+    }
+    .discount-badge {
+      background: #ff6f91;
+      color: white;
+      padding: 2px 6px;
+      font-size: 0.8rem;
+      border-radius: 4px;
+    }
+
+
+    footer {
+  background-color:rgb(252, 242, 242); 
+  color: black; 
+  font-family: 'Poppins', sans-serif;
+  padding: 40px 20px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-about, 
+.footer-column, 
+.footer-newsletter {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.footer-about h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ff6f91; 
+}
+
+.footer-about p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 1.3rem;
+  color: #ff6f91;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #f7d1d9; 
+}
+
+.footer-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #ff6f91;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #817e7e;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #ff6f91;
+  text-decoration: underline;
+}
+
+.footer-newsletter h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #ff6f91;
+}
+
+.footer-newsletter p {
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.footer-newsletter form {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-newsletter input[type="email"] {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 4px;
+}
+
+.footer-newsletter button {
+  background-color: #ff6f91;
+  border: none;
+  color: white;
+  padding: 0 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.footer-newsletter button:hover {
+  background-color: #e85a7f;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 15px 0 0;
+  border-top: 1px solid #444;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 30px;
+}
+
+
+@media(max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+   
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-light shadow-sm">
+  <div class="container">
+    <a class="navbar-brand logo" href="home.html">
+      <span class="part1">Fashion</span><span class="part2">Shop</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+   <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+  <ul class="navbar-nav gap-4">
+    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+    <li class="nav-item"><a class="nav-link" href="add-product.html">Add Product</a></li>
+     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+    <li class="nav-item">
+      <a class="nav-link" href="cart.html">
+        <i class="bi bi-cart3"></i> Cart
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#" onclick="logout()">Logout</a>
+    </li>
+  </ul>
+</div>
+
+    </div>
+  </div>
+</nav>
+
+<!--Hero Section -->
+<section class="hero-section d-flex align-items-center justify-content-center text-center" 
+  style="position: relative; min-height: 70vh; background-image: url('assets/images/ayo-ogunseinde-UqT55tGBqzI-unsplash.jpg'); background-size: cover; background-position: center; color: white;">
+  <div style="position: absolute; inset: 0; background: rgba(27, 67, 50, 0.6); z-index: 1;"></div>
+  <div style="position: relative; z-index: 2; max-width: 600px;">
+    <h1 class="display-1 fw-bold">New <span style="color: #fdaad8;">Fashion</span></h1>
+    <p class="lead mb-4">The latest trends just arrived. Refresh your wardrobe with our new collection.</p>
+    <a href="products.html" class="btn btn-lg px-4" style="background-color: #f875aa; color: white;">Shop Now</a>
+
+  </div>
+</section>
+
+
+<!-- Swiper Section -->
+<section class="py-5 bg-white">
+  <div class="container">
+   <h2 class="mb-4 text-center fw-bold section-title">
+  <span class="text-part1">Featured</span>
+  <span class="text-part2">Products</span>
+</h2>
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="assets/images/17 Must-Have Floral Maxidresses Perfect for Parties and Picnics.jpg" alt="Slide 4" class="img-fluid rounded"></div>
+        <div class="swiper-slide"><img src="assets/images/download (21).jpg" alt="Slide 3" class="img-fluid rounded"></div>
+        <div class="swiper-slide"><img src="assets/images/BLUE LAYERED MIDI DRESS WITH SCARF _ HAPPY CLOTHING _ CULT MIA (1).jpg" alt="Slide 5" class="img-fluid rounded"></div>
+        
+        <div class="swiper-slide"><img src="assets/images/download (22).jpg" alt="Slide 6" class="img-fluid rounded"></div>
+        <div class="swiper-slide"><img src="assets/images/download (34).jpg" alt="Slide 1" class="img-fluid rounded"></div>
+        <div class="swiper-slide"><img src="assets/images/download (25).jpg" alt="Slide 2" class="img-fluid rounded"></div>
+       
+        <div class="swiper-slide"><img src="assets/images/IT Girl 2025 Gold Outfit Summer Fit European Summer Yellow Fit.jpg" alt="Slide 7" class="img-fluid rounded"></div>
+        <div class="swiper-slide"><img src="assets/images/download (24).jpg" alt="Slide 8" class="img-fluid rounded"></div>
+        <div class="swiper-slide"><img src="assets/images/download.jpg" alt="Slide 9" class="img-fluid rounded"></div>
+     </div>
+
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Products Section -->
+<section id="products" class="py-5 bg-light">
+  <div class="container">
+    
+    <h2 class="mb-4 text-center section-title">
+  <span class="part1">Our</span><span class="part2">Products</span>
+</h2>
+
+    <div class="row" id="product-list">
+    </div>
+  </div>
+</section>
+
+<!-- New Collection Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="mb-4 text-center section-title" style="font-family: 'Poppins', sans-serif;">
+      <span class="part1">New</span><span class="part2">Collection</span>
+    </h2>
+    <div class="row g-4">
+      <!-- Product 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/images/Christian Siriano Fashion Collections For Women _ Moda Operandi - Copy.jpg" class="card-img-top" alt="Product 1">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Purple Blazer</h5>
+            <div class="mb-2">
+              <span class="old-price text-decoration-line-through">$120</span>
+              <span class="new-price text-success fw-bold ms-2">$90</span>
+              <span class="discount-badge ms-2">-25%</span>
+            </div>
+            <button class="btn btn-primary mt-auto"
+                    onclick="addToCartDirect(1, 'Purple Blazer', 'assets/images/Christian Siriano Fashion Collections For Women _ Moda Operandi - Copy.jpg', 90)">
+              Shop Now
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/images/17 Must-Have Floral Maxidresses Perfect for Parties and Picnics.jpg" class="card-img-top" alt="Product 2">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Floral Maxidresses</h5>
+            <div class="mb-2">
+              <span class="old-price text-decoration-line-through">$200</span>
+              <span class="new-price text-success fw-bold ms-2">$150</span>
+              <span class="discount-badge ms-2">-25%</span>
+            </div>
+            <button class="btn btn-primary mt-auto"
+                    onclick="addToCartDirect(2, 'Floral Maxidresses', 'assets/images/17 Must-Have Floral Maxidresses Perfect for Parties and Picnics.jpg', 150)">
+              Shop Now
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/images/download (22).jpg" class="card-img-top" alt="Product 3">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">White Dress</h5>
+            <div class="mb-2">
+              <span class="old-price text-decoration-line-through">$85</span>
+              <span class="new-price text-success fw-bold ms-2">$68</span>
+              <span class="discount-badge ms-2">-20%</span>
+            </div>
+            <button class="btn btn-primary mt-auto"
+                    onclick="addToCartDirect(3, 'White Dress', 'assets/images/download (22).jpg', 68)">
+              Shop Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!---footer---> 
+<footer>
+  <div class="footer-container">
+    <div class="footer-about">
+      <h2><i class="fas fa-cube"></i> FashionShop</h2>
+      <p>Creating beautiful, functional websites with modern CSS techniques and animations that delight users and drive results.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Features</a></li>
+        <li><a href="#" class="gallery-hover">Gallery</a></li>
+        <li><a href="#">Stats</a></li>
+        <li><a href="#" class="contact-hover">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Services</h3>
+      <ul>
+        <li><a href="#">Web Design</a></li>
+        <li><a href="#">UI/UX Design</a></li>
+        <li><a href="#">Frontend Development</a></li>
+        <li><a href="#">CSS Animations</a></li>
+        <li><a href="#">Performance Optimization</a></li>
+      </ul>
+    </div>
+    <div class="footer-newsletter">
+      <h3>Newsletter</h3>
+      <p>Subscribe to our newsletter to get updates on new features and techniques.</p>
+      <form action="#" method="post">
+        <input type="email" placeholder="Your Email" required />
+        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 FashionShop. All rights reserved.
+  </div>
+</footer>      
+
+<!-- Scripts -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  
+  if (!localStorage.getItem("loggedIn")) {
+    window.location.href = "index.html"
+  }
+
+
+  function logout() {
+    Swal.fire({
+      title: "Logged out",
+      text: "You have been logged out successfully.",
+      icon: "success",
+      timer: 1500,
+      showConfirmButton: false
+    }).then(() => {
+      localStorage.removeItem("loggedIn");
+      window.location.href = "index.html";
+    });
+  }
+
+  const products = [
+    {
+      id: 1,
+      name: "Yellow Dress",
+      price: 120,
+      image: "assets/images/download (34).jpg",
+    },
+    {
+      id: 2,
+      name: "Casual Blouse",
+      price: 80,
+      image: "assets/images/download (36).jpg",
+    },
+    {
+      id: 3,
+      name: "Formal Suit",
+      price: 100,
+      image: "assets/images/download (21).jpg",
+    },
+  ];
+
+  function displayProducts() {
+    const productList = document.getElementById("product-list");
+    productList.innerHTML = "";
+
+    products.forEach(product => {
+      const card = `
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <img src="${product.image}" class="card-img-top" alt="${product.name}" />
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">${product.name}</h5>
+              <p class="card-text text-success fw-bold">$${product.price}</p>
+              <button class="btn btn-pink mt-auto" onclick="addToCart(${product.id})">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      `;
+      productList.insertAdjacentHTML("beforeend", card);
+    });
+  }
+
+  function addToCart(productId) {
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    Swal.fire({
+      icon: "success",
+      title: "Added to Cart",
+      text: `"${product.name}" has been added to your cart!`,
+      timer: 1500,
+      showConfirmButton: false
+    });
+  }
+
+  window.onload = () => {
+    displayProducts();
+
+    new Swiper(".mySwiper", {
+      loop: true,
+      spaceBetween: 30,
+      centeredSlides: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  };
+
+// Adds the product with the discounted price //
+  function addToCartDirect(id, name, image, price) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push({ id, name, image, price });
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  Swal.fire({
+    icon: "success",
+    title: "Added to Cart",
+    text: `"${name}" has been added to your cart!`,
+    timer: 1500,
+    showConfirmButton: false
+  });
+}
+
+
+</script>
+</body>
+</html>
